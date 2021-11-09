@@ -1,0 +1,14 @@
+name: 'Download release-actions'
+description: 'Downloads release-actions'
+inputs:
+  token:
+    description: 'Personal access token that can access the red-gate/release-actions repository'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: red-gate/release-actions
+        path: release-actions
+        token: ${{ inputs.token }}
