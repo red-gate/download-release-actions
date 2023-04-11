@@ -4,11 +4,16 @@ inputs:
   token:
     description: 'Personal access token that can access the red-gate/release-actions repository'
     required: true
+  ref:
+    description: 'The branch, tag or SHA to checkout. Defaults to specific commit for this version of the Release Actions.'
+    default: '56222efc2ab4951f00a46e9edf00196b33d5c38a'
+    required: false
 runs:
   using: 'composite'
   steps:
     - uses: actions/checkout@v3
       with:
         repository: red-gate/release-actions
+        ref: ${{ inputs.ref }}
         path: release-actions
         token: ${{ inputs.token }}
