@@ -6,7 +6,7 @@ inputs:
     required: true
   ref:
     description: 'The branch, tag or SHA to checkout. Defaults to specific commit for this version of the Release Actions.'
-    default: 'v3.1.12'
+    default: 'v3.1.13'
     required: false
 runs:
   using: 'composite'
